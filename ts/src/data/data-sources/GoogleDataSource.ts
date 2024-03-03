@@ -3,8 +3,8 @@ import { Translate } from "@google-cloud/translate/build/src/v2";
 export class GoogleDataSource {
     private readonly client: Translate;
 
-    constructor(projectId: string) {
-        this.client = new Translate({ projectId });
+    constructor(projectId: string, key: string) {
+        this.client = new Translate({ projectId, key });
     }
 
     async translate(text: string, target: string) {

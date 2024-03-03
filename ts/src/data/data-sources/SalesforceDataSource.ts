@@ -1,10 +1,10 @@
 type GetKeysResponse = {
     apiKey: string;
-    projectKey: string;
+    projectId: string;
 }
 
 export class SalesforceDataSource {
-    public getKeys: () => Promise<GetKeysResponse>
+    public readonly getKeys: () => Promise<GetKeysResponse>
 
     constructor(getKeys: () => Promise<GetKeysResponse>) {
         this.getKeys = getKeys;

@@ -8,4 +8,17 @@ export class Translation {
         this.translation = translation;
         this.target = target;
     }
+
+
+    getSourceText() {
+        return this.text;
+    }
+
+    getTranslatedText() {
+        return this.translation;
+    }
+
+    getLanguage() {
+        return this.target
+    }
 }

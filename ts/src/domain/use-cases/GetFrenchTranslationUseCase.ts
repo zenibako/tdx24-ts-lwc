@@ -1,6 +1,5 @@
 import { ITranslationRepository } from "../../data/abstractions/ITranslationRepository";
 
-
 export class GetFrenchTranslationUseCase {
     private readonly translations: ITranslationRepository;
 
