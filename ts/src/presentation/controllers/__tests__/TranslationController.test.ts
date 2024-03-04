@@ -17,10 +17,11 @@ describe('TranslationController', () => {
     });
 
     it('should translate text into French', async () => {
+        const expectedTranslation = new Translation('Hello', 'Bonjour', 'fr');
         mockSalesforceData.getKeys.mockResolvedValue({ projectId, apiKey });
-        useCaseSpy.mockResolvedValue(new Translation('Hello', 'Bonjour', 'fr'));
+        useCaseSpy.mockResolvedValue(expectedTranslation);
 
         const response = await TranslationController.translateIntoFrench('Hello', mockSalesforceData);
-        expect(response).toBe('Bonjour');
+        expect(response).toBe(expectedTranslation);
     });
 });

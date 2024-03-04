@@ -6,8 +6,8 @@ describe('Translation', () => {
         const translatedText = 'Bonjour';
         const language = 'fr';
         const translation = new Translation(text, translatedText, language);
-        expect(translation.getSourceText).toBe(text);
-        expect(translation.getTranslatedText).toBe(translatedText);
-        expect(translation.getLanguage).toBe(language);
+        expect(translation.getSourceText()).toBe(text);
+        expect(translation.getTranslatedText()).toBe(translatedText);
+        expect(translation.getLanguage()).toBe(language);
     })
 });

@@ -13,6 +13,6 @@ describe('FrenchTranslationRepository', () => {
         mockGoogleData.translate.mockResolvedValue(translatedText);
 
         const response = await repository.get(text, language);
-        expect(response).toBe(translatedText);
+        expect(response.getTranslatedText()).toBe(translatedText);
     });
 });
