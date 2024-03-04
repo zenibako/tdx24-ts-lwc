@@ -1,0 +1,15 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "no-null"],
+  "root": true,
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/stylistic"
+  ],
+  "rules": {
+    "no-null/no-null": "error",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/consistent-type-definitions": ["warn"]
+  }
+}

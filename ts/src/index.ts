@@ -1,3 +1,4 @@
-import { TranslationController } from "./presentation/controllers/TranslationController";
-
-export default TranslationController
+import { setTsLibInUi } from './presentation/ui/SalesforceUi'
+;(function () {
+    setTsLibInUi()
+})()

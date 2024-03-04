@@ -13,7 +13,9 @@
     "prettier": "prettier --write \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
     "prettier:verify": "prettier --check \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
     "postinstall": "husky install",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "build:sdk": "cd ./ts && npx webpack -o ../force-app/main/default/staticresources/tsLib && cd ../",
+    "test:sdk": "cd ./ts && npm run test"
   },
   "devDependencies": {
     "@lwc/eslint-plugin-lwc": "^1.1.2",
