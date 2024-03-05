@@ -15,7 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "google-translate-api-x": "^10.6.8"
+    "translate": "^2.0.2"
   },
   "devDependencies": {
     "@types/jest": "^29.5.2",

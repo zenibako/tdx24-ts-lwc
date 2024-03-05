@@ -1,6 +1,8 @@
 {
   "orgName": "chandleranderson company",
   "edition": "Developer",
+  "country": "US",
+  "language": "en_US",
   "features": ["EnableSetPasswordInApi"],
   "settings": {
     "lightningExperienceSettings": {
@@ -8,6 +10,9 @@
     },
     "mobileSettings": {
       "enableS1EncryptedStoragePref2": false
+    },
+    "userManagementSettings": {
+      "enableNewProfileUI": true
     }
   }
 }

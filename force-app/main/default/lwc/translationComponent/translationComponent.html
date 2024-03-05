@@ -1,1 +1,28 @@
-<template> </template>
+<!--
+  @description       : 
+  @author            : chandler.anderson
+  @group             : 
+  @last modified on  : 2024-03-05
+  @last modified by  : chandler.anderson
+-->
+<template>
+  <lightning-card title="Translation Component">
+    <div class="slds-var-m-around_medium">
+      <lightning-textarea
+        label="Enter text to translate"
+        onchange={handleTextChange}
+        value={textToTranslate}
+      ></lightning-textarea>
+      <div class="slds-var-p-vertical_small">
+        <lightning-button
+          label="Translate"
+          onclick={handleTranslate}
+          disabled={hasNoInput}
+        ></lightning-button>
+      </div>
+      <div class="slds-var-m-top_medium">
+        <p>{translatedText}</p>
+      </div>
+    </div>
+  </lightning-card>
+</template>

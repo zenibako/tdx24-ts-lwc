@@ -1,6 +1,6 @@
 import { TranslationController } from "../controllers/TranslationController";
 type SalesforceUi = {
-  ts_lib: {
+  tsLib: {
     [K in keyof typeof controllers]: typeof controllers[K]
   }
 } & Window
@@ -12,5 +12,5 @@ const controllers = {
 };
 
 export function setTsLibInUi() {
-  (window as SalesforceUi).ts_lib = controllers;
+  (window as SalesforceUi).tsLib = controllers;
 }
