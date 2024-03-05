@@ -1,12 +1,12 @@
 export class Translation {
     private readonly text: string;
     private readonly translation: string;
-    private readonly target: string;
+    private readonly language: string;
 
-    constructor(text: string, translation: string, target: string) {
+    constructor(text: string, translation: string, language: string) {
         this.text = text;
         this.translation = translation;
-        this.target = target;
+        this.language = language;
     }
 
 
@@ -19,6 +19,6 @@ export class Translation {
     }
 
     getLanguage() {
-        return this.target
+        return this.language
     }
 }
