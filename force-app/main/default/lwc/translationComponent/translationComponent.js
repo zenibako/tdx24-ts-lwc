@@ -23,7 +23,8 @@ export default class TranslationComponent extends LightningElement {
 
   async handleTranslate() {
     const { translateIntoFrench } = this.controller;
-    this.translatedText = await translateIntoFrench(this.textToTranslate);
+    const { translation } = await translateIntoFrench(this.textToTranslate);
+    this.translatedText = translation;
     console.log(this.translatedText);
   }
 }
