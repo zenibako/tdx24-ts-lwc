@@ -1,5 +1,5 @@
 import { mock } from 'jest-mock-extended';
-import { ITranslationRepository } from '../../../data/abstractions/ITranslationRepository';
+import { ITranslationRepository } from '../../abstractions/ITranslationRepository';
 import { Translation } from '../../entities/Translation';
 import { GetFrenchTranslationUseCase } from '../GetFrenchTranslationUseCase';
 

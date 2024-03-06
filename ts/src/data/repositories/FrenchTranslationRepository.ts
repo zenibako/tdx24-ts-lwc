@@ -1,7 +1,8 @@
 import { Translation } from "../../domain/entities/Translation";
+import { ITranslationRepository } from "../../domain/abstractions/ITranslationRepository";
 import { GoogleDataSource } from "../data-sources/GoogleDataSource";
 
-export class FrenchTranslationRepository implements FrenchTranslationRepository {
+export class FrenchTranslationRepository implements ITranslationRepository {
     private readonly googleData: GoogleDataSource;
 
     constructor(googleData: GoogleDataSource) {
