@@ -1,16 +1,16 @@
-import { TranslationController } from "../controllers/TranslationController";
-type SalesforceUi = {
-  tsLib: {
-    [K in keyof typeof controllers]: typeof controllers[K]
-  }
-} & Window
+import { GoogleDataSource } from "../../data/data-sources/GoogleDataSource";
+import { FrenchTranslationRepository } from "../../data/repositories/FrenchTranslationRepository";
+import { TranslateTextUseCase } from "../../domain/use-cases/TranslateTextUseCase";
+import { TranslationPresenter } from "../presenters/TranslationPresenter";
+
+type SalesforceUi = { tsLib: TranslationPresenter } & Window
 
 declare let window: SalesforceUi
 
-const controllers = {
-  TranslationController
-};
-
 export function setTsLibInUi() {
-  (window as SalesforceUi).tsLib = controllers;
+  const googleData = new GoogleDataSource();
+  const frenchTranslations = new FrenchTranslationRepository(googleData);
+  const translateTextUseCase = new TranslateTextUseCase(frenchTranslations);
+
+  (window as SalesforceUi).tsLib = new TranslationPresenter(translateTextUseCase);
 }

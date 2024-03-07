@@ -1,18 +1,17 @@
 import { mock } from 'jest-mock-extended';
 import { FrenchTranslationRepository } from '../FrenchTranslationRepository';
-import { GoogleDataSource } from '../../data-sources/GoogleDataSource';
+import { IDataSource } from '../../../domain/abstractions/IDataSource';
 
 describe('FrenchTranslationRepository', () => {
-    const mockGoogleData = mock<GoogleDataSource>();
-    const repository = new FrenchTranslationRepository(mockGoogleData);
+    const mockData = mock<IDataSource>();
+    const repository = new FrenchTranslationRepository(mockData);
 
     it('should get a translation', async () => {
         const text = 'Hello';
         const translatedText = 'Bonjour';
-        const language = 'fr';
-        mockGoogleData.translate.mockResolvedValue(translatedText);
+        mockData.translate.mockResolvedValue(translatedText);
 
-        const response = await repository.get(text, language);
+        const response = await repository.get(text);
         expect(response.getTranslatedText()).toBe(translatedText);
     });
 });

@@ -1,9 +1,9 @@
 import { GoogleDataSource } from '../GoogleDataSource';
 
 const mockTranslate = jest.fn();
-jest.mock('google-translate-api-x',
+jest.mock('translate',
     () => jest.fn().mockImplementation(
-        (text: string, options: { to: string }) => mockTranslate(text, options)
+        (text: string, to: string) => mockTranslate(text, to)
     )
 );
 
@@ -12,7 +12,7 @@ describe('GoogleDataSource', () => {
 
     it('should get a translation', async () => {
         const translatedText = 'Bonjour';
-        mockTranslate.mockResolvedValue({ text: translatedText });
+        mockTranslate.mockResolvedValue(translatedText);
         
         const text = 'Hello';
         const language = 'fr';

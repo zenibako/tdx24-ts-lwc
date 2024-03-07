@@ -3,7 +3,7 @@ import tsLib from "@salesforce/resourceUrl/tsLib";
 import { loadScript } from "lightning/platformResourceLoader";
 
 export default class TranslationComponent extends LightningElement {
-  controller;
+  lib;
 
   textToTranslate;
   translatedText;
@@ -14,7 +14,7 @@ export default class TranslationComponent extends LightningElement {
 
   async connectedCallback() {
     await loadScript(this, tsLib + "/ts_lib.js");
-    this.controller = window.tsLib?.TranslationController;
+    this.lib = window.tsLib;
   }
 
   handleTextChange(event) {
@@ -22,8 +22,9 @@ export default class TranslationComponent extends LightningElement {
   }
 
   async handleTranslate() {
-    const { translateIntoFrench } = this.controller;
-    const { translation } = await translateIntoFrench(this.textToTranslate);
+    const translation = await this.lib
+      .translate(this.textToTranslate)
+      .intoFrench();
     this.translatedText = translation;
     console.log(this.translatedText);
   }

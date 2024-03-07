@@ -1,6 +1,6 @@
 import { ITranslationRepository } from "../abstractions/ITranslationRepository";
 
-export class GetFrenchTranslationUseCase {
+export class TranslateTextUseCase {
     private readonly translations: ITranslationRepository;
 
     constructor(translationRepository: ITranslationRepository) {
@@ -8,6 +8,7 @@ export class GetFrenchTranslationUseCase {
     }
 
     async execute(text: string) {
-        return this.translations.get(text, "fr");
+        const translation = await this.translations.get(text);
+        return translation.getTranslatedText()
     }
 }
