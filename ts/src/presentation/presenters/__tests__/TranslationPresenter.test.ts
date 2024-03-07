@@ -9,7 +9,8 @@ describe('TranslationPresenter', () => {
         const expectedTranslation = 'Bonjour';
         mockUseCase.execute.mockResolvedValue(expectedTranslation);
 
-        const response = await new TranslationPresenter(mockUseCase).translate('Hello').intoFrench();
+        const presenter = new TranslationPresenter(mockUseCase)
+        const response = await presenter.translate('Hello').intoFrench();
         expect(response).toBe(expectedTranslation);
     });
 });
